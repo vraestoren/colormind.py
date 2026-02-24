@@ -13,7 +13,7 @@ class ColorMind:
             "model": model
         }
         return self.session.post(
-            f"{self.api}/api/", data=data).json()
+            f"{self.api}/api/", json=data).json()
     
     def get_color_suggestions(
             self, 
@@ -24,7 +24,7 @@ class ColorMind:
             "model": model
         }
         return self.session.post(
-            f"{self.api}/api/", data=data).json()
+            f"{self.api}/api/", json=data).json()
     
     def get_models(self) -> dict:
         return self.session.get(f"{self.api}/list/").json()
