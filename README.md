@@ -3,8 +3,9 @@ Web-API for [colormind.io](http://colormind.io/) website that uses deep learning
 
 ## Example
 ```python
-import colormind
-colormind = colormind.ColorMind()
+from colormind import ColorMind
+
+colormind = ColorMind()
 random_palette = colormind.get_random_color_palette()
 print(random_palette)
 ```
