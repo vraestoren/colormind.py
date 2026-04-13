@@ -8,12 +8,19 @@ class ColorMind:
             "User-Agent": "Mozilla/5.0 (Linux; Android 11; RMX2086 Build/RKQ1.200928.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/103.0.5060.129 Mobile Safari/537.36"
         }
     
+    def _get(self, endpoint: str, params: dict = {}) -> dict:
+    	return self.session.get(
+    		f"{self.api}{endpoint}", params=params).json()
+
+    def _post(self, endpoint: str, data: dict = None) -> dict:
+    	return self.session.post(
+    		f"{self.api}{endpoint}", json=data).json()
+
     def get_random_color_palette(self, model: str = "default") -> dict:
         data = {
             "model": model
         }
-        return self.session.post(
-            f"{self.api}/api/", json=data).json()
+        return self._post("/api/", data)
     
     def get_color_suggestions(
             self, 
@@ -23,8 +30,7 @@ class ColorMind:
             "input": input,
             "model": model
         }
-        return self.session.post(
-            f"{self.api}/api/", json=data).json()
+        return self._post("/api/", data)
     
     def get_models(self) -> dict:
-        return self.session.get(f"{self.api}/list/").json()
+        return self._get("/list/")
