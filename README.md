@@ -1,5 +1,31 @@
-# <img src="http://colormind.io/img/colormind_logo2.png" width="180" style="vertical-align:middle;" /> colormind.py
-> Web-API wrapper for [Colormind](http://colormind.io) — an AI-powered color palette generator that learns color styles from photographs, movies, and popular art.
+# <img src="http://colormind.io/img/logo_nav.svg" width="80" style="vertical-align:middle;" /> [colormind.py](http://colormind.py)
+> Web-API for [Colormind](http://colormind.io) - an AI-powered color palette generator that learns color styles from photographs, movies, and popular art.
+
+---
+
+---
+
+## Usage
+
+```python
+from colormind import ColorMind
+
+client = ColorMind()
+
+palette = client.get_random_color_palette()
+print(palette)
+
+suggestions = client.get_color_suggestions(
+    input=[[44, 43, 44], "N", "N", "N", [239, 237, 230]]
+)
+print(suggestions)
+
+palette = client.get_random_color_palette(model="landscape")
+print(palette)
+
+models = client.get_models()
+print(models)
+```
 
 ---
 
