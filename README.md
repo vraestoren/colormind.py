@@ -1,4 +1,4 @@
-# <img src="http://colormind.io/img/logo_nav.svg" width="80" style="vertical-align:middle;" /> [colormind.py](http://colormind.py)
+# <img src="http://colormind.io/img/logo_nav.svg" width="80" style="vertical-align:middle;" /> colormind.py
 > Web-API for [Colormind](http://colormind.io) - an AI-powered color palette generator that learns color styles from photographs, movies, and popular art.
 
 ---
